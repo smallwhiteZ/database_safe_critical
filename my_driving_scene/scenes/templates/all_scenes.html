@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+{% block title %}
+  List of all scenes
+{% endblock %}
+
+{% block content %}
+<div class="mycard">
+  <h1>Scenes</h1>
+  <ul>
+    {% for x in mymembers %}
+    <li><a href="details/{{ x.id }}">{{ x.name }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

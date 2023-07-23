@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+{% block title %}
+  List of reports
+{% endblock %}
+
+{% block content %}
+<div class="mycard">
+  <h1>测试用例</h1>
+  <ul>
+    {% for x in mymembers %}
+    <li><a href="report_details/{{ x.id }}">  {{ x.name }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

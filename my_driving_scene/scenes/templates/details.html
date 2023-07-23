@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+
+{% block title %}
+  My scenes - List of all members
+{% endblock %}
+{% block content %}
+<div class="mycard">
+  <h1>{{ mymember.name }}</h1>
+    
+  <p>描述： {{ mymember.describtion }}</p>
+  <p>天气： {{ mymember.weather }}</p>
+  <p>道路： {{ mymember.road }}</p>
+  <p>行为： {{ mymember.action }}</p>
+  <p>对象： {{ mymember.objecter }}</p>
+  <p>对象行为： {{ mymember.action_objecter }}</p>
+  <p>图片预览：<br><img src="{{ mymember.image.url }}" height="400" width="450"></img></p>
+  <p><a href="{{ mymember.file.url }}" download="scenicfile">点击下载模型文件</a></p>
+  <p><a href="/reports/{{ mymember.id }}">查看测试用例</p>
+  <p>返回<a href="/scenes">场景页</a></p>
+</div>
+{% endblock %}
