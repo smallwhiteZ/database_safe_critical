@@ -5,16 +5,18 @@
 
 {% block content %}
 <div class="mycard" style="display: inline-block; width: 15%;background-size: 0;margin: 10px 20px;">
-  <h2>场景分类</h2>
-  {% for y in mymembersc %}
-  <a href="/reports/{{ y.id }}" style="color: #000;">{{ y.name }}</a><br>
-  {% endfor %}
-</div>
+    <h2>车辆行为分类</h2>
+    {% for y in mymodel %}
+    <a href="/models/{{ y.id }}" style="color: #000;">{{ y.name }}</a><br>
+    {% endfor %}
+  </div>
 <div class="mycard" style="display: inline-block;width: 60%;margin: 10px 20px;background-size: 100% 80px;vertical-align: top;">
-  <h1 style="margin: 0 0 7%;">测试用例</h1>
+  {% for x in myname %}
+  <h1 style="margin: 0 0 7%;">包含{{ x.describtion }}行为</h1>
+  {% endfor %}
   <ul>
-    {% for x in mymembers %}
-    <li><a href="report_details/{{ x.id }}">  {{ x.name }}</a></li>
+    {% for x in mymember %}
+    <li><a href="scenes/details/{{ x.id }}">  {{ x.name }} </a></li>
     {% endfor %}
   </ul>
 </div>

@@ -4,12 +4,19 @@
 {% endblock %}
 
 {% block content %}
-<div class="mycard">
-  <h1>Scenes</h1>
+<div class="mycard" style="display: inline-block; width: 15%;background-size: 0;margin: 10px 20px;">
+  <h2>车辆行为分类</h2>
+  {% for y in mymemberm %}
+  <a href="/models/{{ y.id }}" style="color: #000;">{{ y.name }}</a><br>
+  {% endfor %}
+</div>
+<div class="mycard" style="display: inline-block;width: 60%;margin: 10px 20px;background-size: 100% 80px; vertical-align: top;">
+  <h1 style="margin: 0 0 7%;">所有场景</h1>
   <ul>
     {% for x in mymembers %}
     <li><a href="details/{{ x.id }}">{{ x.name }}</a></li>
     {% endfor %}
   </ul>
 </div>
+
 {% endblock %}

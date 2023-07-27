@@ -5,6 +5,8 @@ class module(models.Model):
     describtion=models.CharField(max_length=255,null="111")
     def __str__(self):
         return f"{self.name}"
+
+
     
 class Scene(models.Model):
     name=models.CharField(max_length=255,null=False)
