@@ -1,0 +1,23 @@
+{% extends "master.html" %}
+{% block title %}
+  List of reports
+{% endblock %}
+
+{% block content %}
+<div class="mycard" style="display: inline-block; width: 15%;background-size: 0;margin: 10px 20px;">
+  <h2>场景分类</h2>
+  {% for y in mymembersc %}
+  <a href="/reports/{{ y.id }}" style="color: #000;">{{ y.name }}</a><br>
+  {% endfor %}
+</div>
+<div class="mycard" style="display: inline-block;width: 60%;margin: 10px 20px;background-size: 100% 80px;vertical-align: top;">
+  {% for z in myscene %}
+  <h1 style="margin: 0 0 7%;">{{z.name}}的测试用例</h1>
+  {% endfor %}
+  <ul>
+    {% for x in mymember %}
+    <li><a href="report_details/{{ x.id }}">  {{ x.name }} </a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
