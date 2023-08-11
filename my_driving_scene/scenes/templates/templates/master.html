@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<link rel="stylesheet" href="{% static 'mystyle.css' %}">
+<body>
+  <div class="topnav">
+    <a href="/">主页</a> |
+    <a href="/scenes">场景库</a> |
+    <a href="/reports">测试用例</a>
+  </div>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
