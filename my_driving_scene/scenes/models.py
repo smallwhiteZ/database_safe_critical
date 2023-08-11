@@ -19,6 +19,7 @@ class Scene(models.Model):
     image=models.ImageField(upload_to='img',null=True)
     file=models.FileField(upload_to='scenicFile',null=True)
     modules=models.ManyToManyField(module,blank=True)
+    video=models.FileField(('视频'),upload_to='videos',null=True,blank='true')
     def module_list(self):
         return ','.join([i.name for i in self.modules.all()])
     def __str__(self):
